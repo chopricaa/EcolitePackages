@@ -2,9 +2,13 @@ const express = require("express");
 const dotenv = require("dotenv");
 const cors = require("cors");
 const mongoose = require("mongoose");
+const cron = require("node-cron");
 const authRoute = require("./routes/auth")
 const userRoute = require("./routes/user")
 const parcelRoute = require("./routes/parcel")
+const { sendWelcomeEmail } = require("./EmailService/WelcomeEmail");
+const { SendParcelPendingEmail } = require("./EmailService/PendingParcel");
+const { sendParcelDeliveredEmail } = require("./EmailService/DeliveredParcel");
 
 dotenv.config();
 const app = express();
@@ -27,9 +31,29 @@ mongoose.connect(DB).then(()=>{
     console.log(err)
 })
 
+
+
+//TASK SCHEDULER
+
+const run = () => {
+    cron.schedule("* * * * *", () => {
+      sendWelcomeEmail()
+      SendParcelPendingEmail()
+      sendParcelDeliveredEmail()
+    });
+  };
+  
+  run();
+
+
+
+
 //SERVER
 
 const PORT = process.env.PORT;
 app.listen(PORT, ()=>{
     console.log(`Server is running on port ${PORT}`)
 })
+
+
+

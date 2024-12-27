@@ -1,3 +1,4 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 /* eslint-disable no-unused-vars */
 import React, { useState } from "react";
 import axios from "axios";

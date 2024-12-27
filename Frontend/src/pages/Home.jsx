@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* eslint-disable no-unused-vars */
+=======
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+>>>>>>> 28c328150e3a67d1606f89db77a0eaf35c2e7644
 import React, { useRef, useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";

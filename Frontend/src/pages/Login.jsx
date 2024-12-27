@@ -1,3 +1,4 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import { useDispatch, useSelector } from "react-redux";

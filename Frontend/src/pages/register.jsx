@@ -36,7 +36,7 @@ const Registration = () => {
     }
 
     try {
-      await axios.post("http://localhost:8000/api/v1/users", formData);
+      await axios.post("https://ecolitepackage.onrender.com/api/v1/users", formData);
       alert("Registration Successful!");
       setFormData({
         fullname: "",

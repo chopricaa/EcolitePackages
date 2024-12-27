@@ -1,3 +1,5 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable no-unused-vars */
 import React from "react";
 
 const data = {
@@ -47,6 +49,7 @@ const Table = ({ title, rows }) => (
   </div>
 );
 
+// eslint-disable-next-line react/prop-types
 const BlackYellowTables = ({ tableData = data }) => (
   <div style={styles.container}>
     {Object.entries(tableData).map(([category, rows], index) => (
